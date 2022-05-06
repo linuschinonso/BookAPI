@@ -40,13 +40,13 @@ class BookController extends Controller
     public function update(book $book)
     {
         //
-      $succesful = book::where('id', 1)->update();
+      $succesful = book::find(1)->update();
         //$succesful=book::where('id', 1)->update();
     //   $successful =  $book->update([
     //         $book->title,
             
     //     ]);
-        return response()->json($successful, 200);
+        return response()->json(['success'=>$succesful]);
         
     
     
@@ -56,11 +56,11 @@ class BookController extends Controller
         public function destroy(book $book)
         {
             //
-            $succesful =book::where('id', 1 )->delete();
+            $succesful =book::find(1)->delete();
             
                 // $successful = $book->delete();
             
-                return response()->json($succesful, 200);
+                return response()->json(['success'=>$succesful]);
     }
     
 

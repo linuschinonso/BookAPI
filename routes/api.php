@@ -30,13 +30,14 @@ Route::get('/books',  [BookController::class, 'index']);
 Route::post('/books',  [BookController::class, 'store']);
 
    //put request
-Route::put('/books/{book}',  [BookController::class, 'update']);
+Route::put('/books/{id}',  [BookController::class, 'update']);
 
  //delete request
-Route::delete('/books/{book}', [BookController::class, 'destroy']);
+Route::delete('/books/{id}', [BookController::class, 'destroy']);
 
 
  
+return response()->json([ 'valid' => auth()->check()]);
 
 
 
